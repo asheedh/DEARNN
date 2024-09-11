@@ -1,0 +1,103 @@
+{% extends 'RUser/design.html' %}
+{% block userblock %}
+
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+<style>
+	body{
+		background-image: url("https://th.bing.com/th/id/R.93de0e72f90787aae35f4bc3d51ce372?rik=GlCAQ0HbWeOyug&riu=http%3a%2f%2fperimeteragency.com%2fwp-content%2fuploads%2f2016%2f07%2fcyber-bullying.jpg&ehk=kZm%2bhMlNH9zkXDgfIJbspQ77N9%2fs3JEKTPr2qLuswUg%3d&risl=&pid=ImgRaw&r=0");
+		background-size: auto;
+	}
+	.container-fluid {
+		padding:50px;
+	}
+	#title{
+		font-family:Georgia, 'Times New Roman', Times, serif;
+	}
+	.text-uppercase{
+		font-family:Georgia, 'Times New Roman', Times, serif;
+	}
+	.tweettext{
+    	border: 2px solid rgb(255, 255, 255);
+    	width: 904px;
+    	height: 202px;
+    	overflow: scroll;
+	}
+	.style1 {
+		color: #00c8ff;
+		font-weight: bold;
+	}
+	.style4 {
+		color: #8c3cf4; font-weight: bold;
+		text-align: center;
+	}
+	.style6 {
+		font-size: 14px;
+		color: #FFFF00;
+		font-weight: bold;
+		text-align: center;
+	}
+	textarea {
+		background-color:#e1161600;
+		border-radius: 08px;
+		font-size: large;
+		border-color: #000000;
+	}
+
+	.style2{
+		color:rgb(0, 38, 255);
+		font-weight:bold;
+	}
+	table {
+		position: relative;
+	}
+	fieldset {
+		border-radius: 08px;
+		background-color: rgba(0, 255, 255, 0.629);
+		text-align: center;
+		margin-left:350px;
+		margin-right:350px;
+	}
+	.btn{
+		text-align: right;
+		margin-right:50px;
+	  }
+</style>
+<body>
+	<div class="container-fluid">
+        <form role="form" method="POST" >
+		{% csrf_token %}
+			<fieldset>
+				<p class="text-uppercase pull-center style2" align="center">PREDICTION OF CYBERBULLYING DETECTION TYPE !!! </p><hr>
+            	    {% csrf_token %}
+                        <table>
+                           	<tr>
+                               	<td ><div align="center"><span class="style4">Enter Tweet Message Here </span></div></td>
+                                <td ><textarea name="tweettext" cols="40" rows="10"></textarea></td>
+                          	</tr>	
+                        </table>
+						<div class="btn">
+							<input name="submit" type="submit" value="Predict"><br>
+						</div>
+			</fieldset>
+		</form>
+ 		<form role="form" method="POST" >
+		{% csrf_token %}
+		<fieldset>
+			<div align="center">
+				<span class="style6">TWEET MESSAGE DETECTION TYPE</span>
+			</div>
+			<div align="center">
+				<strong>{{objs}}</strong>
+			</div>
+					
+			</fieldset>
+		</form>
+	</div>
+</body>
+{% endblock %}
+<tr>

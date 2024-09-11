@@ -1,0 +1,78 @@
+{% extends 'SProvider/Header.html' %}
+{% block researchblock %}
+
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+	<style>
+		body {
+			background-color:#000000;
+		}
+		.container-fluid {
+			padding:50px;
+		}
+		.container {
+			padding:10px;
+			background-color: #0084ff62;
+			border-radius: 08px;
+		}
+		#title{
+			font-family: 'Fredoka One', cursive;
+		}
+		.text-uppercase{
+			font-family: 'Righteous', cursive;
+		}
+		.style1 {
+			color: #00fff7;
+			font-weight: bold;
+			font-family: Georgia, 'Times New Roman', Times, serif;
+		}
+		td{
+			padding:5px;
+		}
+		.style2{
+			font-family:Georgia, 'Times New Roman', Times, serif;
+			font-weight: bold;
+
+		}
+    </style>
+<body>
+	<div class="container-fluid">
+		<div class="container">
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p align="center" class="text-uppercase pull-center style1">Prediction of Cyberbullying Detection Type  !!! </p>
+							<hr>
+                            <div class="font">
+                               	<table>
+                               		<tr>
+                                 		<td>
+											<div align="center" class="style2">
+												<span>Tweet Message </span>
+											</div>
+										</td>
+                                		<td>
+											<div align="center" class="style2">
+												<span>Prediction</span>
+											</div>
+										</td>
+                      				</tr>
+                            		{% for object in list_objects %}
+                      				<tr>
+                   						<td align="justify" style="color:rgb(0, 255, 200); font-size:20px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif" >{{object.Tweet_Message}}</td>
+                    					<td align="justify" style="color:rgb(0, 255, 234); font-size:20px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" >{{object.Prediction}}</td>
+                        			</tr>
+                              	  {% endfor %}
+                    		  	</table>
+                            </div>
+						</fieldset>
+					</form>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

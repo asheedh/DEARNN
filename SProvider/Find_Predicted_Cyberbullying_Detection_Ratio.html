@@ -1,0 +1,92 @@
+{% extends 'SProvider/Header.html' %}
+{% block researchblock %}
+
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+	<style>
+		body {
+			background-color:#000000;
+		}
+		.container-fluid {
+			padding:50px;
+		}
+		.container{
+			background-color:rgba(23, 146, 222, 0.578);
+			border-radius: 8px;
+			width:auto;
+			margin-right:900px;
+		}
+		
+		#title{font-family: 'Fredoka One', cursive;
+		}
+		
+		.text-uppercase{
+			font-family: 'Righteous', cursive;
+		}
+		.style1 {
+			color: #00ccff;
+			font-weight: bold;
+			font-family: Georgia, 'Times New Roman', Times, serif;
+		}
+		
+		.style7 {
+			color: #000000;
+			font-family:Georgia, 'Times New Roman', Times, serif
+		}
+
+		table{
+			padding:5px;
+		}
+		fieldset{
+			border-radius: 8px;
+			width:auto;
+		}
+        </style>
+	<body>
+	<div class="container-fluid">
+		<div class="container">
+			
+
+
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+                            <p align="center" class="text-uppercase pull-center style1">Cyberbullying Detection Type Ratio Details</p>
+                            <div>
+                               <table align="center">
+                      <tr><td><div align="center"><span class="style10 style7">Cyberbullying Detection Type</span></div></td>
+                          <td><div align="center"><span class="style10 style7">Ratio</span></div></td>
+                      </tr>
+                            {% for object in objs %}
+                      <tr>
+                                        <td style="color:rgb(7, 4, 4); font-size:20px; font-family:monoscope" ><div align="left">{{object.names}}</div></td>
+                                        <td style="font-family:monospace; font-size:19px; "><div align="center" class="style9"><span class="style7">{{object.ratio}}</span></div></td>
+                                 </tr>
+
+                                        {% endfor %}
+                      </table>
+
+
+
+                            </div>
+
+
+
+
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    <tr>

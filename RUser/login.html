@@ -1,0 +1,124 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<title>Login</title>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<head>
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+		<style>
+			body{
+				background-image: url("https://th.bing.com/th/id/R.93de0e72f90787aae35f4bc3d51ce372?rik=GlCAQ0HbWeOyug&riu=http%3a%2f%2fperimeteragency.com%2fwp-content%2fuploads%2f2016%2f07%2fcyber-bullying.jpg&ehk=kZm%2bhMlNH9zkXDgfIJbspQ77N9%2fs3JEKTPr2qLuswUg%3d&risl=&pid=ImgRaw&r=0");
+			}
+
+			.container-fluid {
+				padding:50px;
+			}
+		
+			.login-page{
+				border: 2px solid #00c8ff;
+            	padding: 20px;
+            	text-align: center;
+            	max-width: 305px;
+            	margin: 0 auto;
+            	border-radius: 10px;
+				background-color: #00d0ff61;
+			}
+			
+			.cls {
+            	text-align: center;
+            	max-width: 300px;
+            	margin: 0 auto;
+            	border-radius: 10px;
+				text-align: justify;
+				color: #00ff80;
+			}
+
+			a {
+				color:#ff0000
+			}
+
+			.text-uppercase{
+				font-family: 'Righteous', cursive;
+			}
+
+        	.style5 {
+				font-family:Georgia, 'Times New Roman', Times, serif;
+				color: #00ff80;
+				font-weight:200;
+			}
+
+        	.style6 {
+				color: #00d0ff; font-weight: bold;
+				font-family:Georgia, 'Times New Roman', Times, serif;
+				font-size: 50px;
+				text-align: center; 
+			}
+
+			input {
+				border-radius:08px;
+			}
+
+			.btn {
+				background-color: rgb(56, 56, 204);
+			}
+
+			.btn:hover {
+				background-color:#00c8ff;
+			}
+        </style>
+	</head>
+	<body>
+	<div class="container-fluid">
+		<div >
+			<h2 class="style6">DEARNN: A Hybrid Deep Learning Approach for Cyberbullying Detection in Twitter Social Media Platform</h2>
+			<p class="text-center">
+				<span class="style5"><small id="passwordHelpInline" class="text-muted">Unmask the Bully</small></span></p>
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p class="text-uppercase pull-center">&nbsp;</p>
+					  </fieldset>
+					</form>
+ 			<form method="POST" role="form">
+				{% csrf_token %}
+				<div class="login-page">
+					<fieldset>
+                	    {% load static %}
+						<p class="style5"> Login </p>
+
+						<div class="form-group">
+							<input type="text" name="username"   placeholder="User Name" required>
+						</div>
+
+						<div class="form-group">
+							<input type="password" name="password"   placeholder="Password" required>
+						</div>
+
+						<div="btn">
+							<input type="submit" name="submit1"  class="btn btn-md" value="Sign In">
+						</div></br>
+ 					</fieldset>
+				</div>
+			</form>
+			<div class="cls">
+				Admin? <a href="{% url 'serviceproviderlogin' %}" >SERVICE PROVIDER</a><br>
+				Don't have account? <a href="{% url 'Register1' %}" >REGISTER</a>
+				
+			</div>
+		</div>
+	</div>
+	</body>
+</html>

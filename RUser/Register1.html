@@ -1,0 +1,195 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<title>Register Your Details</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	  <style type="text/css">
+      .style1 {
+	      color: #00d0ff; font-weight: bold;
+				font-family:Georgia, 'Times New Roman', Times, serif;
+				font-size: 50px;
+				text-align: center; 
+      }
+    </style>
+	<head>
+  	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+		<style>
+			body {
+        background-image: url("https://public-assets.typeform.com/public/mega-menu/helpcenter.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+			
+      .container-fluid {
+        padding:50px;
+      }
+
+      .reg1 {
+        text-align: center;
+        margin:0 auto ;
+      }
+
+      .reg {
+        font-family:Georgia, 'Times New Roman', Times, serif;
+				color: #6244bd;
+				font-weight:300;
+        font-size: large;
+      }
+
+      .reg2{
+        text-align:center;
+        max-width: 300px;
+        margin:0 auto ;
+      }
+
+      label { 
+        width: 200px; 
+        text-align: left;
+      }
+
+			.container{
+        background-color:rgb(209, 31, 31);padding:50px;
+      }
+
+			#title{
+        font-family:Georgia, 'Times New Roman', Times, serif;
+      }
+
+			.text-uppercase{
+			  font-family:Georgia, 'Times New Roman', Times, serif;
+			}
+
+      input {
+        border-radius: 5px;
+      }
+
+      textarea {
+        border-radius: 5px;
+      }
+
+      select {
+        border-radius: 5px;
+      }
+
+      button{
+        background-color: #8a6dde;
+        padding:100px 20px;
+        width:auto;
+        height:0 auto;
+      }
+
+      button:hover {
+        background-color:#3e0ada;
+      }
+
+      .style3 {color: #FF0000}
+      .style5 {font-weight: bold}
+    </style>
+	</head>
+  <body>
+	<div class="container-fluid">
+		<div>
+			<h2 class="text-center style1">DEARNN: A Hybrid Deep Learning Approach for Cyberbullying Detection in Twitter Social Media Platform</h2>
+			<p class="text-center">
+			  <span class="style3">
+          <small id="passwordHelpInline" class="text-muted">Unmask the Bully</small>
+        </span>
+      </p>
+ 			<form role="form" method="POST" >
+				{% csrf_token %}
+        <div class="reg1"> 
+				  <fieldset>
+            <p>{% load static %}
+					  <span class="reg style22">Register with your details </span></p>
+            <span class="style19 style2">
+              <label>Enter Username</label>
+            </span>
+            <span class="form-group">
+              <input type="text" name="username" id="username"  placeholder="User Name" required="required" />
+            </span><br>
+            
+            <span class="style22 style2">
+              <label>Enter Password </label>
+            </span>
+            <span class="form-group">
+              <input type="password" name="password" id="password"  placeholder="Password" required="required" />
+            </span><br>
+          
+            <span class="style19 style2">
+              <label>Enter EMail Id </label>
+            </span>
+            <span class="form-group">
+              <input type="email" name="email" id="email"  placeholder="Enter Email " required="required" />
+            </span><br>
+          
+            <span class="style22 style2">
+              <label>Enter Address </label>
+            </span>
+            <span class="form-group">
+              <textarea name="address" placeholder="Enter Address "></textarea>
+            </span><br>
+          
+            <span class="style19 style2">
+              <label>Enter Gender </label>
+            </span>
+            <select name="gender">
+					    <option>----Select Gender ----</option>
+					    <option>Male</option>
+					    <option>Female</option>
+            </select><br>
+
+            <span class="style22 style2">
+              <label>Enter Mobile Number </label>
+            </span>
+            <span class="form-group">
+              <input type="number" name="phoneno" id="phoneno"  placeholder="Enter Mobile Number" required="required" />
+            </span><br>
+          
+            <span class="style19 style2">
+              <label>Enter Country Name </label>
+            </span>
+            <span class="form-group">
+              <input type="text" name="country" id="country"  placeholder="Enter Country Name" required="required" />
+            </span><br>
+          
+            <span class="style22 style2">
+              <label>Enter State Name </label>
+            </span>
+            <span class="form-group">
+              <input type="text" name="state" id="state"  placeholder="Enter State Name" required="required" />
+            </span><br>
+          
+            <span class="style19 style2">
+              <label>Enter City Name </label>
+            </span>
+            <span class="form-group">
+              <input type="text" name="city" id="city"  placeholder="Enter City Name" required="required" />
+            </span><br><br>
+
+            <button class="btn btn-lg " input type="submit" class="btn btn-lg btn-primary" name="submit"  value="Register">Register</button>  
+          </fieldset>
+        </div>
+			    
+ 			</form>
+       <div class="reg2">
+        <p>
+          <span class="active">
+            <span class="style12 style10 style5">
+              Already have Account?<a href="{% url 'login' %}"> Login </a><br>
+              Admin? <a href="{% url 'serviceproviderlogin' %}"> Service Provider </a>
+            </span>
+          </span>
+        </p>
+      </div>
+		</div>
+		<div align="left" class="style23">
+      <span class="style2">
+        <label><strong>Registered Status ----::</strong></label>{{object}}</span>
+    </div>   
+	</div>
+	</body>
+</html>

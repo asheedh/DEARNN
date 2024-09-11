@@ -1,0 +1,110 @@
+{% extends 'SProvider/Header.html' %}
+{% block researchblock %}
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+	<style>
+		body {
+			background-color:#000000;
+		}
+
+		.container-fluid {
+			padding:50px;
+		}
+
+		.container{
+			background-color:rgba(255, 255, 255, 0.723);
+			border-radius:08px;
+			
+		}
+
+		#title{
+			font-family:Georgia, 'Times New Roman', Times, serif;
+		}
+		
+		.text-uppercase{
+			font-family:Georgia, 'Times New Roman', Times, serif;
+
+		}
+		input{
+			font-family:'Russo One', sans-serif;
+			font-size:15px;
+		}
+
+		.style1 {
+			color: #00aaff;
+			text-align:center;
+			font-family:Georgia, 'Times New Roman', Times, serif;
+			font-weight: bold;
+		}
+		
+		fieldset{
+			border-radius:08px;
+		}
+		table {
+			font-family: Georgia, 'Times New Roman', Times, serif;
+			padding:0px;
+
+		}
+		th{
+			width:300px;
+			text-align: left;
+
+		}
+
+		.style2 {
+			color: #000000;
+			text-align:center;
+			font-family:Georgia, 'Times New Roman', Times, serif;
+		}
+
+    </style>
+<body>
+	<div class="container-fluid">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5">
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p class="text-uppercase pull-center style1">VIEW ALL REMOTE USERS !!! </p>
+                            <div class="viewclients">
+							  <table>
+								<tr>
+									<th style="color:rgb(0, 136, 255)">USER NAME</th>
+									<th style="color:rgb(0, 136, 255)">EMAIL</th>
+									<th style="color:rgb(0, 136, 255)">Gender</th>
+									<th style="color:rgb(0, 136, 255)">Address</th>
+									<th style="color:rgb(0, 136, 255)">Mob No</th>
+									<th style="color:rgb(0, 136, 255)">Country</th>
+									<th style="color:rgb(0, 136, 255)">State</th>
+									<th style="color:rgb(0, 136, 255)">City</th>
+								</tr>
+								<tr>
+								{% for o in objects %}
+									<td style="color:rgb(255, 255, 255)"><span class="style2">{{o.username}}</span></td>
+									<td style="color:white"><span class="style2">{{o.email}}</span></td>
+									<td style="color:white"><span class="style2">{{o.gender}}</span></td>
+									<td style="color:white"><span class="style2">{{o.address}}</span></td>
+									<td style="color:white"><span class="style2">{{o.phoneno}}</span></td>
+									<td style="color:white"><span class="style2">{{o.country}}</span></td>
+									<td style="color:white"><span class="style2">{{o.state}}</span></td>
+									<td style="color:white"><span class="style2">{{o.city}}</span></td>
+								</tr>
+								{% endfor %}
+							</table>
+						</div>
+					  </fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

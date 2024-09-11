@@ -1,0 +1,84 @@
+{% extends 'RUser/design.html' %}
+{% block userblock %}
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+<style>
+	body {
+    background-image:url("https://th.bing.com/th/id/R.93de0e72f90787aae35f4bc3d51ce372?rik=GlCAQ0HbWeOyug&riu=http%3a%2f%2fperimeteragency.com%2fwp-content%2fuploads%2f2016%2f07%2fcyber-bullying.jpg&ehk=kZm%2bhMlNH9zkXDgfIJbspQ77N9%2fs3JEKTPr2qLuswUg%3d&risl=&pid=ImgRaw&r=0");
+    background-size: auto;
+    position:absolute
+  }
+
+	.container-fluid {
+    padding:50px;
+  }
+	.container{
+      position:absolute;
+      font-size:large;
+  }
+	#title{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    position:absolute;
+  }
+	.text-uppercase{
+		font-family: 'Righteous', cursive;
+	}
+  .style2 {
+  color: #001aff;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+
+  table{
+    background-color: rgba(0, 242, 255, 0.451);
+    border-radius: 10px;
+    top:100px;
+    padding:10px;
+  }
+
+  td {
+    width: 120px ;
+    height: 30px ;
+    margin-left:50px;
+  }
+  
+</style>
+<body>
+	<div class="container-fluid">
+		<div class="container">
+ 					<table>
+                                <tr>
+                                    <td><span class="style2"><label>Username</label></span></td>
+                                  <td><span>{{object.username}}</span></td>
+                                    <td><span class="style2">Email Id </span></td>
+                                    <td ><span>{{object.email}}</span></td>
+                      </tr>
+                                  <tr>
+                                    <td><span class="style2"><label>Mobile Number </label></span></td>
+                                    <td><span>{{object.phoneno}}</span></td>
+                                    <td><span class="style2">Gender</span></td>
+                                    <td><span>{{object.gender}}</span></td>
+                                  </tr>
+
+                                  <tr>
+                                    <td><span class="style2"><label>Address</label></span></td>
+                                    <td><span>{{object.address}}</span></td>
+                                    <td><span class="style2">Country</span></td>
+                                    <td><span>{{object.country}}</span></td>
+                                  </tr>
+                                  <tr>
+                                    <td><span class="style2"><label>State</label></span></td>
+                                    <td><span>{{object.state}}</span></td>
+                                    <td><span class="style2">City</span></td>
+                                    <td><span>{{object.city}}</span></td>
+                                  </tr>
+                                </table>
+				</div>
+
+				
+            </div>
+        </div>
+    </div>
+{% endblock %}

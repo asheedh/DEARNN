@@ -1,0 +1,107 @@
+{% extends 'SProvider/Header.html' %}
+{% block researchblock %}
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+<style>
+	body {
+		background-image: url("https://wallpapercave.com/wp/wp4748437.jpg");
+	}
+
+	.container{
+		background-color:rgba(23, 146, 222, 0.578);
+		border-radius: 8px;
+		width:auto;
+		margin-right:900px;
+	}
+
+	.container-fluid {
+		padding:50px;
+	}
+			
+	#title{
+		font-family: 'Fredoka One', cursive;
+	}
+
+	.text-uppercase{
+		font-family: 'Righteous', cursive;
+	}
+
+	.tweettext{
+    	border: 2px solid rgba(153, 205, 50, 0);
+ 		width: 1104px;
+    	height: 442px;
+    	overflow: scroll;
+    	background-color:red;
+	}
+
+	.style1 {
+		color: #FF0000;
+		font-weight: bold;
+		font-family: Georgia, 'Times New Roman', Times, serif;
+	}
+
+	.style7 {
+		color: #00aeff;
+		font-family: Georgia, 'Times New Roman', Times, serif;
+		font-weight: bold;	
+	}
+
+	.style9 {
+		text-align: left;
+		color:black;
+		font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		font-weight: 200px;
+	}
+
+	fieldset{
+		border-radius: 8px;
+		width:auto;
+	}
+
+</style>
+<body>
+	<div class="container-fluid">
+		<div class="container">
+ 			<form role="form" method="POST" >
+			{% csrf_token %}
+				<fieldset>
+            		<p align="center" class="text-uppercase pull-center style1">Tweets DataSets Trained and Tested Results</p>
+                		<div>
+            				<table>
+        	  					<tr>
+									<td>
+										<div align="center">
+											<span class="style7">Model Type</span>
+										</div>
+									</td>
+									<td>
+										<div align="center">
+											<span class="style7">Accuracy</span>
+										</div>
+									</td>
+                    			</tr>
+                   				{% for object in objs %}
+              					<tr>
+									<td>
+										<div class="style9">{{object.names}}</div>
+									</td>
+									<td>
+										<div class="style9">
+											<span>{{object.ratio}}</span>
+										</div>
+									</td>
+								</tr>
+			            		{% endfor %}
+                			</table>
+							{{objs1}}
+                		</div>
+				</fieldset>
+			</form>
+    	</div>
+	</div>
+</body>
+{% endblock %}

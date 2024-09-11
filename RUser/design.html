@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Remote User</title>
+<link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+<style>
+      body{background-image: url("https://th.bing.com/th/id/R.93de0e72f90787aae35f4bc3d51ce372?rik=GlCAQ0HbWeOyug&riu=http%3a%2f%2fperimeteragency.com%2fwp-content%2fuploads%2f2016%2f07%2fcyber-bullying.jpg&ehk=kZm%2bhMlNH9zkXDgfIJbspQ77N9%2fs3JEKTPr2qLuswUg%3d&risl=&pid=ImgRaw&r=0");
+	background-size:cover;
+	font-family:Georgia, 'Times New Roman', Times, serif;
+	background-color: #000000;
+    }
+    h1{
+    color:white;
+    }
+.topnav {
+  overflow: hidden;
+  background-color: rgb(57, 141, 220);
+}
+
+.topnav a {
+  float: left;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #566ee6;
+  color: rgb(0, 0, 0);
+}
+
+.topnav a.active {
+  background-color: #5d0fb1;
+  color: rgb(2, 0, 98);
+}
+.style1 {color: #00FFFF}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+<body>
+
+<h1 align="center" class="style1">DEARNN: A Hybrid Deep Learning Approach for Cyberbullying Detection in Twitter Social Media Platform</h1>
+
+<div  class="topnav">
+
+     <a href="{% url 'Predict_Tweet_Meesage_Type' %}">PREDICT CYBERBULLYING TYPE</a>
+     <a href="{% url 'ViewYourProfile' %}">VIEW YOUR PROFILE</a>
+     <a href="{% url 'login' %}">LOGOUT</a>
+</div>
+
+<div class="mainholder">
+{% block userblock %}
+{% endblock %}
+</div>
+</body>
+</html>
